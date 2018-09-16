@@ -16,3 +16,6 @@ switch (req.url) {
   ...
 }
 ```
+
+參考資料：https://nodejust.com/nodejs-routing-request/zh-cn/
+         https://stackoverflow.com/questions/16056591/font-scaling-based-on-width-of-container
