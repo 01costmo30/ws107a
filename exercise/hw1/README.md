@@ -19,3 +19,4 @@ switch (req.url) {
 
 參考資料：https://nodejust.com/nodejs-routing-request/zh-cn/
          https://stackoverflow.com/questions/16056591/font-scaling-based-on-width-of-container
+         https://stackoverflow.com/questions/28822034/simple-node-js-server-that-sends-htmlcss-as-response

@@ -1,0 +1,20 @@
+body {
+    background-color: #30E6FF; 
+    font-family: consolas;
+}
+.subcontent{
+    transform: translate(-50%,-50%);
+    position: absolute;
+    display: table-cell;
+    padding: 50px 40px;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+}
+.subcontent span{
+    float: left; 
+    width: 100%;
+}
+.clear {
+    clear: both;
+}
