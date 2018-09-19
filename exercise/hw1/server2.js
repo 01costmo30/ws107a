@@ -2,6 +2,7 @@ const http = require('http');
 const fs = require('fs');
 
 const server = http.createServer((req, res) => {
+    var NF = fs.readFileSync("./404.html");
     var css1 = fs.readFileSync("./style.css");
     var css2 = fs.readFileSync("./style2.css");
     var css3 = fs.readFileSync("./style3.css");
@@ -44,14 +45,15 @@ const server = http.createServer((req, res) => {
             res.write(css4);
             res.end();
             break;
-        case '/style4.css':
+        case '/style5.css':
             res.writeHead(200, {"Content-Type": "text/css"});
             res.write(css5);
             res.end();
             break;
         default:
             res.writeHead(404, {"Content-Type": "text/html;charset='utf-8'"});
-            res.end("<html><head><meta charset='utf-8'><title>404</title><link rel='stylesheet' type='text/css' href='style5.css'/></head><body><div class='subcontent'><span style = 'font-size: 10vw;'>404: </span><span style = 'font-size: 3vw;'>Oops! Wrong page.</span><div class='clear'></div></div></body></html>");
+            res.write(NF);
+            res.end();
             break;
     }
     console.log("Request for " + req.url + " received.");

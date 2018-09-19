@@ -1,6 +1,7 @@
 body {
     background-color: #30E6FF; 
     font-family: consolas;
+    overflow: hidden;
 }
 .subcontent{
     transform: translate(-50%,-50%);
@@ -14,6 +15,15 @@ body {
 .subcontent span{
     float: left; 
     width: 100%;
+}
+progress {
+    background: #30E6FF;
+    border: hidden;
+    float: left; 
+    width: 100%;
+}
+progress::-moz-progress-bar {
+    border: hidden;
 }
 .clear {
     clear: both;
