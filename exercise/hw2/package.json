@@ -1,12 +1,22 @@
 {
+<<<<<<< HEAD
   "name": "costmo",
+=======
+  "name": "ccclodash3",
+>>>>>>> bbb244c6bd90e3bb3b007439970544d7e4ba1266
   "version": "0.0.1",
   "description": "Reimplement lodash functions",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "example": "node example/chunkEx.js",
     "test": "mocha"
   },
   "author": "nobody",
+=======
+    "test": "mocha"
+  },
+  "author": "ccc",
+>>>>>>> bbb244c6bd90e3bb3b007439970544d7e4ba1266
   "license": "MIT"
 }
