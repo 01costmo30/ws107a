@@ -37,11 +37,14 @@
     "rodash": "^1.0.2"
 =======
     "koa-logger": "^3.2.0",
+    "koa-mount": "^4.0.0",
     "koa-router": "^7.4.0",
     "koa-session": "^5.9.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.1.4",
     "lodash": "^4.17.11",
+    "nightwatch": "^0.9.21",
+    "puppeteer": "^1.8.0",
     "should": "^3.3.2",
     "supertest": "^3.3.0"
 >>>>>>> 267716dc02f10c96c33f474292455c52364e3fe8
