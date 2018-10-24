@@ -1,0 +1,64 @@
+<html>
+    <head><meta charset="utf-8">
+        <style>
+            body {
+                overflow: hidden;
+            }
+            p {
+                font-size: 72px;
+                text-align: center;
+                float: left;
+                position: absolute;
+                width: 100%;
+                white-space: nowrap;
+            }
+            div {
+                float: left;
+                position: absolute;
+                top: 20vh;
+                white-space: nowrap;
+                left: 21vw;
+            }
+            .dot {
+                border-radius: 30px;
+                background-color: #FF2266;
+                z-index: 999;
+                width: 30px;
+                height: 30px;
+                transform: translate(-45%, -40%);
+            }
+            #content {
+                padding: 10px 15px;
+                border: 2px solid #ff2266;
+                border-radius: 0 30px 15px 15px;
+                background-color: #ffffff;
+            }
+            #title {
+                font-size: 24px;
+                font-weight: bold;
+                color: #FF2266;
+            }
+            .subt {
+                font-weight: 900;
+                color: #ee0044;
+            }
+            .clear {
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <p><%= user.name.first %> is a <%= user.age %> year old <%= user.species %>.</p>
+        <div>
+            <div class="dot"></div>
+            <div id="content">
+                <span id="title">Personal File</span></br>
+                <span class="subt">First Name: </span><span><%= user.name.first %></span></br>
+                <span class="subt">Last Name: </span><span><%=user.name.last %></span></br>
+                <span class="subt">Age: </span><span><%= user.age %></span></br>
+                <span class="subt">Species: </span><span><%= user.species %></span>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </body>
+</html>

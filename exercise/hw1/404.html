@@ -1,0 +1,27 @@
+<html>
+    <head><meta charset='utf-8'>
+        <title>404</title>
+        <link rel='stylesheet' type='text/css' href='style5.css'/>
+    </head>
+    <body>
+        <div class='subcontent'>
+            <span style = 'font-size: 10vw;'>404: </span>
+            <span style = 'font-size: 3vw;'>Oops! Wrong page.</span>
+            <span id="countdown" style = 'font-size: 1.3vw;'>Redirect to the correct page in 5 seconds.</span>
+            <progress value="0" max="5" id="progressBar"></progress>
+            <div class='clear'>
+            </div>
+        </div>
+        <script>
+            var timeleft = 5;
+            var downloadTimer = setInterval(function(){
+            document.getElementById("progressBar").value = 5 - --timeleft;
+            document.getElementById("countdown").innerHTML = "Redirect to the correct page in " + timeleft +" seconds.";
+            if(timeleft <= 0) {
+                clearInterval(downloadTimer);
+                window.location.replace('/');
+            }
+            },1000);
+        </script>
+    </body>
+</html>
