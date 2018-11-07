@@ -12,10 +12,11 @@ app.use(koaBody())
 
 router
   .post('/post/change/:id', change)
+  .get('/post/delete/:id', deleted)
   .get('/post/edit/:id', edit)
   .get('/post/:id', show)
+  .get('/add/post', add)
   .post('/post', create)
-  .get('/post/new', add)
   .get('/', list)
 
 app.use(router.routes())
@@ -40,6 +41,12 @@ async function edit (ctx) {
   const id = ctx.params.id
   const post = M.get(id)
   ctx.body = await V.edit(post)
+}
+
+async function deleted (ctx) {
+  const id = ctx.params.id
+  const post = M.delete(id)
+  ctx.redirect('/')
 }
 
 async function change (ctx) {

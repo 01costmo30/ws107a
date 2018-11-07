@@ -67,18 +67,23 @@ V.layout = function (title, content) {
 
 V.list = function (posts) {
   let list = []
+  let id = posts.length
   for (let post of posts) {
-    list.push(`
-    <li>
-      <h2>${post.title}</h2>
-      <p><a href="/post/${post.id}">讀取貼文</a></p>
-    </li>
-    `)
+    if (post.id || post.id == 0) {
+      list.push(`
+      <li>
+        <h2>${post.title}</h2>
+        <p><a href="/post/${post.id}">讀取貼文</a></p>
+      </li>
+      `)
+    }else {
+      id -= 1
+    }
   }
   let content = `
   <h1>貼文列表</h1>
-  <p>您總共有 <strong>${posts.length}</strong> 則貼文!</p>
-  <p><a href="/post/new">創建新貼文</a></p>
+  <p>您總共有 <strong>${id}</strong> 則貼文!</p>
+  <p><a href="/add/post">創建新貼文</a></p>
   <ul id="posts">
     ${list.join('\n')}
   </ul>
@@ -103,6 +108,7 @@ V.show = function (post) {
     <h1>${post.title}</h1>
     <p>${post.body}</p>
     <p><a href="/post/edit/${post.id}">修改貼文</a></p>
+    <p><a href="/post/delete/${post.id}">刪除貼文</a></p>
   `)
 }
 

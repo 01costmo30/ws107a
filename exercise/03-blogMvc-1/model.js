@@ -12,7 +12,10 @@ M.edit = function (post) {
   posts[post.id] = post
   // post.created_at = new Date()
 }
-
+M.delete = function (id) {
+  posts.splice(id, 1, {title: null, body: null, created_at: null, id: null})
+  console.log(posts)
+}
 M.get = function (id) {
   return posts[id]
 }
