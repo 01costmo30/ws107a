@@ -14,8 +14,8 @@ router
   .post('/post/change/:id', change)
   .get('/post/delete/:id', deleted)
   .get('/post/edit/:id', edit)
+  .get('/post/new', add)
   .get('/post/:id', show)
-  .get('/add/post', add)
   .post('/post', create)
   .get('/', list)
 

@@ -83,7 +83,7 @@ V.list = function (posts) {
   let content = `
   <h1>貼文列表</h1>
   <p>您總共有 <strong>${id}</strong> 則貼文!</p>
-  <p><a href="/add/post">創建新貼文</a></p>
+  <p><a href="/post/new">創建新貼文</a></p>
   <ul id="posts">
     ${list.join('\n')}
   </ul>
