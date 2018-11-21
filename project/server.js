@@ -50,7 +50,6 @@ async function open(ctx) {
     // if (ctx.params.chk) {
         const user = M.whoami()
         const facc = M.facc(user[0].friends)
-        console.log(facc)
         ctx.body = await V.open(user[0], facc)
     /* }else {
         ctx.redirect('/')
@@ -61,7 +60,6 @@ async function show(ctx) {
     const chat = M.list()
     const user = M.whoami()
     const facc = M.facc(user[0].friends)
-    console.log(facc)
     ctx.body = await V.show(chat, user[0], facc, ctx.params.id)
 }
 

@@ -29,10 +29,9 @@ V.layout = function (content) {
                     width: 10%;
                 }
                 #chatroom {
-                    max-height: calc(100% - 90px);
-                    min-height: 50%;
                     height: calc(100% - 90px);
                     max-width: 30%;
+                    width: 30%;
                     overflow: auto;
                     padding: 10px;
                     float: left;
@@ -60,7 +59,7 @@ V.layout = function (content) {
                     width: 100%;
                     float: left;
                 }
-                .cont, button, input {
+                .cont, .cont1, button, input {
                     background-color: #000000;
                     border-radius: 20px;
                     font-family: consolas;
@@ -69,7 +68,7 @@ V.layout = function (content) {
                     border: 0;
                     color: #ffffff;
                 }
-                .cont {
+                .cont, .cont1 {
                     overflow-wrap: break-word;
                     table-layout: fixed;
                     word-break: break-all;
@@ -77,7 +76,10 @@ V.layout = function (content) {
                     max-width: calc(30% - 100px);
                     min-height: 24px;
                 }
-                .time, .delete {
+                .cont1, .time1, .delete1 {
+                    float: right;
+                }
+                .time, .delete, .time1, .delete1 {
                     font-size: 10px;
                     color: lightgray;
                 }
@@ -138,12 +140,32 @@ V.show = function (chat, user, facc, id) {
                 date.splice(0, 1, chatbox.date)
                 list.push(`<span class="date">${chatbox.date.YYYY}/${chatbox.date.mm}/${chatbox.date.dd}</span>`)
             }
-            if (chatbox.time.hour<10) {
-                if (chatbox.time.minute<10) {
+            if (chatbox.rece==user.id) {
+                if (chatbox.time.hour<10) {
+                    if (chatbox.time.minute<10) {
+                        list.push(`
+                            <span class="chatbox">
+                                <span class="cont">${chatbox.content}</span>
+                                <span class="time">0${chatbox.time.hour}:0${chatbox.time.minute}</span>
+                                <span class="delete"><a href="/delete/${chatbox.id}">刪除</a></span>
+                                <span class="clear"></span>
+                            </span>
+                        `)
+                    }else {
+                        list.push(`
+                            <span class="chatbox">
+                                <span class="cont">${chatbox.content}</span>
+                                <span class="time">0${chatbox.time.hour}:${chatbox.time.minute}</span>
+                                <span class="delete"><a href="/delete/${chatbox.id}">刪除</a></span>
+                                <span class="clear"></span>
+                            </span>
+                        `)
+                    }
+                }else if (chatbox.time.minute<10) {
                     list.push(`
                         <span class="chatbox">
                             <span class="cont">${chatbox.content}</span>
-                            <span class="time">0${chatbox.time.hour}:0${chatbox.time.minute}</span>
+                            <span class="time">${chatbox.time.hour}:0${chatbox.time.minute}</span>
                             <span class="delete"><a href="/delete/${chatbox.id}">刪除</a></span>
                             <span class="clear"></span>
                         </span>
@@ -152,31 +174,54 @@ V.show = function (chat, user, facc, id) {
                     list.push(`
                         <span class="chatbox">
                             <span class="cont">${chatbox.content}</span>
-                            <span class="time">0${chatbox.time.hour}:${chatbox.time.minute}</span>
+                            <span class="time">${chatbox.time.hour}:${chatbox.time.minute}</span>
                             <span class="delete"><a href="/delete/${chatbox.id}">刪除</a></span>
                             <span class="clear"></span>
                         </span>
                     `)
                 }
-            }else if (chatbox.time.minute<10) {
-                list.push(`
-                    <span class="chatbox">
-                        <span class="cont">${chatbox.content}</span>
-                        <span class="time">${chatbox.time.hour}:0${chatbox.time.minute}</span>
-                        <span class="delete"><a href="/delete/${chatbox.id}">刪除</a></span>
-                        <span class="clear"></span>
-                    </span>
-                `)
             }else {
-                list.push(`
-                    <span class="chatbox">
-                        <span class="cont">${chatbox.content}</span>
-                        <span class="time">${chatbox.time.hour}:${chatbox.time.minute}</span>
-                        <span class="delete"><a href="/delete/${chatbox.id}">刪除</a></span>
-                        <span class="clear"></span>
-                    </span>
-                `)
+                if (chatbox.time.hour<10) {
+                    if (chatbox.time.minute<10) {
+                        list.push(`
+                            <span class="chatbox">
+                                <span class="cont1">${chatbox.content}</span>
+                                <span class="time1">0${chatbox.time.hour}:0${chatbox.time.minute}</span>
+                                <span class="delete1"><a href="/delete/${chatbox.id}">刪除</a></span>
+                                <span class="clear"></span>
+                            </span>
+                        `)
+                    }else {
+                        list.push(`
+                            <span class="chatbox">
+                                <span class="cont1">${chatbox.content}</span>
+                                <span class="time1">0${chatbox.time.hour}:${chatbox.time.minute}</span>
+                                <span class="delete1"><a href="/delete/${chatbox.id}">刪除</a></span>
+                                <span class="clear"></span>
+                            </span>
+                        `)
+                    }
+                }else if (chatbox.time.minute<10) {
+                    list.push(`
+                        <span class="chatbox">
+                            <span class="cont1">${chatbox.content}</span>
+                            <span class="time1">${chatbox.time.hour}:0${chatbox.time.minute}</span>
+                            <span class="delete1"><a href="/delete/${chatbox.id}">刪除</a></span>
+                            <span class="clear"></span>
+                        </span>
+                    `)
+                }else {
+                    list.push(`
+                        <span class="chatbox">
+                            <span class="cont1">${chatbox.content}</span>
+                            <span class="time1">${chatbox.time.hour}:${chatbox.time.minute}</span>
+                            <span class="delete1"><a href="/delete/${chatbox.id}">刪除</a></span>
+                            <span class="clear"></span>
+                        </span>
+                    `)
+                }
             }
+            
         }
     }
     let cont = `
