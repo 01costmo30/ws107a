@@ -1,0 +1,262 @@
+body, #content {
+  font-family: consolas;
+  overflow: hidden;
+  background-color: #000000;
+  margin: 0 auto;
+}
+body, #content, #theCR, #loginpg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  float: left;
+}
+#loginpg {
+  -webkit-transform: translate(-50%,-55%) scale(1.5,1.5);
+  -ms-transform: translate(-50%,-55%) scale(1.5,1.5);
+  transform: translate(-50%,-55%) scale(1.5,1.5);
+  position: absolute;
+  display: table-cell;
+  width: 162px;
+  height: 152px;
+  top: 50%;
+  left: 50%;
+}
+#theCR {
+  visibility: hidden;
+  min-width: 410px;
+  transform: translate(-50%, 0);
+  position: absolute;
+  display: table-cell;
+  margin: 0 auto;
+  height: 100%;
+  width: 30%;
+  left: 50%;
+}
+h1 {
+  font-weight: 900;
+  margin: 5px auto;
+  color: #DA627D;
+}
+#person {
+  border-width: 0 1px 0 0;
+  border-style: solid;
+  border-color: #DA627D;
+  float: left;
+  height: calc(100% - 110px);
+  min-width: 6px;
+  width: calc(27% - 2px);
+}
+.friend {
+  width: 100%;
+  padding: 15px 0;
+  position: relative;
+  z-index: 1;
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  float: left;
+  cursor: pointer;
+}
+.friend:before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+  height: 0%;
+  width: 90%;
+  border-bottom: 1px solid #DA627D;
+}
+.friend:hover {
+  text-decoration: underline;
+  color: #DA627D;
+}
+#chatroom {
+  min-width: 280px;
+  height: calc(100% - 130px);
+  width: calc(73% - 20px);
+  overflow: auto;
+  padding: 10px;
+  float: left;
+  color: #ffffff;
+}
+#login {
+  font-family: consolas, 微軟正黑體, "microsoft jhenghei";
+  font-weight: 900;
+  font-size: 13px;
+  color: #DA627D;
+}
+#login a {
+  color: #A53860;
+}
+#login span {
+  margin: 0 0 10px 0;
+  float: left;
+  width: 100%;
+  color: #DA627D;
+}
+#login .input {
+  margin: 0 10px 10px 0;
+}
+span a {
+  color: #A53860;
+}
+#send {
+  float: left;
+  position: fixed;
+  bottom: 0;
+  margin: 0 0 15px 20px;
+  left: 26%;
+}
+#setting {
+  -webkit-mask: url('./pics/setting-icon2.png') no-repeat;
+  mask: url('./pics/setting-icon2.png') no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  background-color: #DA627D;
+  background-size: cover;
+  transform: translate(-5px, 4px);
+  margin: 0 5px 0 0;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  float: left;
+}
+#setting:hover {
+  background-color: #08A08A;
+}
+#setmenu {
+  background-color: #FF3270;
+  border-radius: 20px;
+  position: absolute;
+  display: none;
+  height: 90px;
+  bottom: 50px;
+  float: left;
+  width: 45%;
+}
+#logout {
+  text-align: center;
+  position: relative;
+  padding: 14px 0;
+  cursor: pointer;
+  color: #000000;
+  float: left;
+  width: 100%;
+}
+#logout:hover {
+  text-decoration: underline;
+  color: #450920;
+}
+#logout:before {
+  content: "";
+  position: absolute;
+  left: 7%;
+  bottom: 0;
+  height: 0%;
+  width: 86%;
+  border-bottom: 1px solid #000000;
+}
+.date {
+  background-color: #08A08A;
+  border-radius: 15px;
+  font-family: consolas;
+  font-size: 10px;
+  padding: 2px 6px;
+  margin: 0 0 10px 0;
+  color: #000000;
+  float: left;
+}
+.chatbox {
+  min-height: 30px;
+  margin: 0 0 10px 0;
+  width: 100%;
+  float: left;
+  position: relative;
+}
+.img {
+  background-position: center center;
+  background-size: cover;
+  border-radius: 50%;
+  min-height: 50px;
+  min-width: 50px;
+  display: inline-block;
+  height: 3.8vw;
+  width: 3.8vw;
+  float: left;
+}
+.uname {
+  color: #DA627D;
+  top:0;
+  float: left;
+  margin: 0 0 0 5px;
+}
+.cont, .cont1, button, input, .input {
+  background-color: #FF3270;
+  border-radius: 20px;
+  font-family: consolas;
+  font-size: 12px;
+  padding: 8px;
+  border: 0;
+  color: #450920;
+}/*
+.cont1:after {
+  float: right;
+}*/
+button, .input {
+  cursor: pointer;
+}
+::placeholder {
+  font-family: consolas, 微軟正黑體, "microsoft jhenghei";
+  font-weight: 800;
+  color: #450920;
+  opacity: 0.8;
+}
+::-ms-input-placeholder {
+  font-family: consolas, 微軟正黑體, "microsoft jhenghei";
+  font-weight: 800;
+  color: #450920;
+  opacity: 0.8;
+}
+:-ms-input-placeholder {
+  font-family: consolas, 微軟正黑體, "microsoft jhenghei";
+  font-weight: 800;
+  color: #450920;
+  opacity: 0.8;
+}
+.cont, .cont1 {
+  overflow-wrap: break-all;
+  table-layout: fixed;
+  word-break: break-all;
+  word-wrap: break-word;
+  width: auto;
+  min-height: 12px;
+  position: absolute;
+  margin: 0 0 0 5px;
+}
+.cont1 {
+  background-color: #08A08A;
+  color: #000000;
+}
+ .time1, .delete:hover {
+   font-size: 10px;
+   margin: 0 0 0 5px;
+   color: #08A08A;
+   position: relative;
+   line-height: 42px;
+ }
+.time, .delete {
+  font-size: 10px;
+  margin: 0 0 0 5px;
+  color: #DA627D;
+  position: relative;
+  line-height: 42px;
+}
+.delete {
+  cursor: pointer;
+}
+input {
+  margin-right: 10px;
+}
+.clear {
+  clear: both;
+}
