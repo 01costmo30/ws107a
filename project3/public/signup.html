@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Sign up</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/pics/unhappyMonster.ico"/>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/submain.js"></script>
+  </head>
+  <body>
+    <div id="signup">
+      <h1>Sign up</h1>
+      <span><input type="text" id="un" name="un" placeholder="使用者名稱"></span>
+      <span><input type="text" id="u" name="u" placeholder="帳號"></span>
+      <span><input type="password" id="p" name="p" placeholder="密碼"></span>
+      <span><input type="text" id="e" name="e" placeholder="Email"></span>
+      <span>頭貼</span>
+      <span><input type="radio" name="pic" value="y">Yep!</span>
+      <span><input type="file" id="pics" name="pic" accept="image/*" /></span>
+      <span><input type="radio" name="pic" value="n">Nope!</span>
+      <button id="submit">sign up!</button>
+    </div>
+  </body>
+</html>
